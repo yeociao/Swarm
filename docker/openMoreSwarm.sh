@@ -93,7 +93,7 @@ echo "创建docker-compose.yml文件"
 createDockerComposeDoYml
 echo "docker-compose.yml创建成功"
 
-function createDockerComposeDoYml () {
+function createDockerComposeDoEnv () {
     sudo touch /usr/local/docker/bee-node1/.env
      for((i=0;i<$count;i++)); do
     cat <<EOF >/usr/local/docker/bee-node$i/.env
@@ -195,5 +195,5 @@ done
 }
 
 echo "创建.env文件"
-createDockerComposeDotYml
+createDockerComposeDotEnv
 echo "创建.env文件成功"
