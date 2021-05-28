@@ -39,18 +39,24 @@ docker-compose.yml会部署在
 
 step3、
 停用容器：
+
 cd /usr/local/docker/bee-node1
+
 docker-compose down
 
 启用容器：
+
 cd /usr/local/docker/bee-node1
+
 docker-compose up -d
 
 查询以太坊地址（查询bee运行日志）第一次运行接水：
 
 cd /usr/local/docker/bee-node1
+
 docker-compose logs -f bee-1
 
 查询密钥地址
+
 cd /var/lib/docker/volumes/swarm2_clef-2/_data/data
 
