@@ -47,6 +47,7 @@ cd /usr/local/docker/bee-node1
 docker-compose up -d
 
 查询以太坊地址（查询bee运行日志）第一次运行接水：
+
 cd /usr/local/docker/bee-node1
 docker-compose logs -f bee-1
 
