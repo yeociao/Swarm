@@ -24,7 +24,7 @@ function createDockerComposeDotYml () {
 version: "3"
 services:
   clef-$i:
-    image: ethersphere/clef:0.4.9
+    image: ethersphere/clef:0.4.12
     restart: unless-stopped
     environment:
       - CLEF_CHAINID
@@ -109,6 +109,8 @@ CLEF_CHAINID=5
 
 ## HTTP API listen address (default :1633)
 # BEE_API_ADDR=:1633
+## chain block time (default 15)
+# BEE_BLOCK_TIME=15
 ## initial nodes to connect to (default [/dnsaddr/bootnode.ethswarm.org])
 # BEE_BOOTNODE=[/dnsaddr/bootnode.ethswarm.org]
 ## cause the node to always accept incoming connections
@@ -126,7 +128,7 @@ BEE_CLEF_SIGNER_ENDPOINT=http://clef-$i:8550
 ## db capacity in chunks, multiply by 4096 to get approximate capacity in bytes
 # BEE_DB_CAPACITY=5000000
 ## number of open files allowed by database
-# BEE_DB_OPEN_FILES_LIMIT=200
+BEE_DB_OPEN_FILES_LIMIT=2000
 ## size of block cache of the database in bytes
 # BEE_DB_BLOCK_CACHE_CAPACITY=33554432
 ## size of the database write buffer in bytes
@@ -141,6 +143,8 @@ BEE_DEBUG_API_ENABLE=true
 # BEE_GATEWAY_MODE=false
 ## enable global pinning
 # BEE_GLOBAL_PINNING_ENABLE=false
+## cause the node to start in full mode
+BEE_FULL_NODE=true 
 ## NAT exposed address
 # BEE_NAT_ADDR=
 ## ID of the Swarm network (default 1)
@@ -161,6 +165,8 @@ BEE_DEBUG_API_ENABLE=true
 # BEE_PAYMENT_THRESHOLD=100000
 ## excess debt above payment threshold in BZZ where you disconnect from your peer (default 10000)
 # BEE_PAYMENT_TOLERANCE=10000
+## postage stamp contract address
+# BEE_POSTAGE_STAMP_ADDRESS=
 ## ENS compatible API endpoint for a TLD and with contract address, can be repeated, format [tld:][contract-addr@]url
 # BEE_RESOLVER_OPTIONS=[]
 ## whether we want the node to start with no listen addresses for p2p
@@ -171,14 +177,20 @@ BEE_DEBUG_API_ENABLE=true
  BEE_SWAP_ENDPOINT=https://rpc.slock.it/goerli
 ## swap factory address
 # BEE_SWAP_FACTORY_ADDRESS=
+## legacy swap factory addresses
+# BEE_SWAP_LEGACY_FACTORY_ADDRESSES=
 ## initial deposit if deploying a new chequebook (default 100000000)
 # BEE_SWAP_INITIAL_DEPOSIT=100000000
+## gas price in wei to use for deployment and funding (default "")
+# BEE_SWAP_DEPLOYMENT_GAS_PRICE=
 ## enable tracing
 # BEE_TRACING_ENABLE=false
 ## endpoint to send tracing data (default 127.0.0.1:6831)
 # BEE_TRACING_ENDPOINT=127.0.0.1:6831
 ## service name identifier for tracing (default bee)
 # BEE_TRACING_SERVICE_NAME=bee
+## proof-of-identity transaction hash
+# BEE_TRANSACTION=
 ## log verbosity level 0=silent, 1=error, 2=warn, 3=info, 4=debug, 5=trace (default info)
 # BEE_VERBOSITY=info
 ## send a welcome message string during handshakes
