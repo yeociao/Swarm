@@ -1,4 +1,4 @@
-# Deploy Swram with docker multi-node
+# Deploy swarm with docker multi-node
 #脚本适用于redhat（centos）系列的linux，不适用于ubuntu系列。
 
 step1、
