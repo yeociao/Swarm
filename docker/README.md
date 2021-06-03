@@ -1,4 +1,5 @@
 # Deploy swarm with docker multi-node
+
 #脚本适用于redhat（centos）系列的linux，不适用于ubuntu系列。
 
 step1、
@@ -23,9 +24,11 @@ step3、
 pull获取最新的配置文件镜像
 
 docker pull ethersphere/clef:0.4.12
+
 docker pull ethersphere/bee:beta
 
 脚本默认未自启动脚本，请自行到每个docker-compose.yml文件夹下修改.evn参数,执行下面命令,开启容器实例运行：
+
 docker-compose up -d
 
 
@@ -40,6 +43,7 @@ BEE_SWAP_ENDPOINT=https://rpc.slock.it/goerli
 BEE_PASSWORD=my-password
 
 docker-compose.yml会部署在
+
 /usr/local/docker/bee-node/ 目录，进到此目录下可进行相关操作。
 
 
