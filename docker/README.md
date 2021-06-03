@@ -44,7 +44,7 @@ docker-compose.yml会部署在
 
 
 
-step3、
+step4、
 停用容器：
 
 cd /usr/local/docker/bee-node1
