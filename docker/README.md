@@ -17,8 +17,15 @@ step2、
 
 sh openMoreSwarm.sh
 
-等待部署成功。脚本默认未自启动脚本，请自行到每个docker-compose.yml文件夹下执行：
+等待部署成功。
 
+step3、
+pull获取最新的配置文件镜像
+
+docker pull ethersphere/clef:0.4.12
+docker pull ethersphere/bee:beta
+
+脚本默认未自启动脚本，请自行到每个docker-compose.yml文件夹下修改.evn参数,执行下面命令,开启容器实例运行：
 docker-compose up -d
 
 
