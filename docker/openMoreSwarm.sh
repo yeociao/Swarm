@@ -75,8 +75,8 @@ services:
       - BEE_WELCOME_MESSAGE
     ports:
       - "163$basePort:1633"
-      - "163$(($basePort+1)):1633"
-      - "163$(($basePort+2)):1633"
+      - "163$(($basePort+1)):1634"
+      - "163$(($basePort+2)):1635"
     volumes:
       - bee-$i:/home/bee/.bee
     command: start
